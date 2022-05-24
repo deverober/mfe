@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, Browser, BrowserRouter } from 'react-router-dom'
+import { Switch, Route, BrowserRouter } from 'react-router-dom'
 import { StylesProvider } from '@material-ui/core/styles'
 
 import Landing from './components/Landing'
@@ -17,3 +17,4 @@ export default () => {
         </StylesProvider>
     </div>
 }
+
