@@ -8,20 +8,21 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const devConfig = {
     mode: 'development',
     output: {
-        publicPath: 'http://localhost:8082/'
+        publicPath: 'http://localhost:8083/'
     },
     devServer: {
-        port: 8082,
+        port: 8083,
+        headers: { 'Access-Control-Allow-Origin': '*' },
         historyApiFallback: {
             index: '/index.html'
         }
     },
     plugins: [
         new ModuleFederationPlugin({
-            name: 'auth',
+            name: 'dashboard',
             filename: 'remoteEntry.js',
             exposes: {
-                './AuthApp': './src/bootstrap'
+                './DashboardApp': './src/bootstrap'
             },
             shared: packageJson.dependencies
         }),
